@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruchit Singh - Systems Whisperer & Memory Magician</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    <canvas id="background-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">ruchit.singh</span>
+                <span class="logo-bracket">/&gt;</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#research" class="nav-link">Research</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with 3D Isometric Elements -->
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text" data-scroll>
+                    <div class="hero-label">
+                        <span class="label-dot"></span>
+                        Currently making GPUs less forgetful
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-line gradient-text">Ruchit Singh</span>
+                        <span class="title-line subtitle">I teach computers to share nicely</span>
+                    </h1>
+                    <p class="hero-description">
+                        MSc student at Edinburgh making LLMs play together without hogging all the GPU memory. 
+                        Former platform optimizer who convinced systems to cost 40% less (they weren't happy about it, 
+                        but someone had to do it). Currently researching virtual memory like it's 1995, but for GPUs.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's chat</span>
+                            <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </a>
+                        <a href="resume.pdf" class="btn btn-secondary" download>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            <span>Grab my CV</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">40%</div>
+                            <div class="stat-label">Cost Vaporized</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">3+</div>
+                            <div class="stat-label">Years Debugging</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">∞</div>
+                            <div class="stat-label">Coffee Consumed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual" data-scroll>
+                    <div class="isometric-container">
+                        <!-- GPU Memory Visualization -->
+                        <svg class="isometric-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Base platform -->
+                            <g class="iso-base" data-float="1">
+                                <polygon points="250,100 400,175 250,250 100,175" fill="url(#grad1)" stroke="#667eea" stroke-width="2"/>
+                                <polygon points="100,175 100,300 250,375 250,250" fill="url(#grad2)" stroke="#667eea" stroke-width="2"/>
+                                <polygon points="250,250 250,375 400,300 400,175" fill="url(#grad3)" stroke="#667eea" stroke-width="2"/>
+                            </g>
+                            
+                            <!-- Memory blocks -->
+                            <g class="iso-blocks">
+                                <g class="memory-block" data-float="2">
+                                    <polygon points="200,140 230,155 200,170 170,155" fill="#764ba2" opacity="0.9"/>
+                                    <polygon points="170,155 170,185 200,200 200,170" fill="#5a3a7f" opacity="0.9"/>
+                                    <polygon points="200,170 200,200 230,185 230,155" fill="#8b5fc7" opacity="0.9"/>
+                                </g>
+                                <g class="memory-block" data-float="3">
+                                    <polygon points="270,140 300,155 270,170 240,155" fill="#667eea" opacity="0.9"/>
+                                    <polygon points="240,155 240,185 270,200 270,170" fill="#4e5fc7" opacity="0.9"/>
+                                    <polygon points="270,170 270,200 300,185 300,155" fill="#7e8fef" opacity="0.9"/>
+                                </g>
+                                <g class="memory-block" data-float="2.5">
+                                    <polygon points="235,110 265,125 235,140 205,125" fill="#f093fb" opacity="0.9"/>
+                                    <polygon points="205,125 205,155 235,170 235,140" fill="#d175e8" opacity="0.9"/>
+                                    <polygon points="235,140 235,170 265,155 265,125" fill="#f5a9fc" opacity="0.9"/>
+                                </g>
+                            </g>
+                            
+                            <!-- Data flow lines -->
+                            <g class="data-flow">
+                                <path class="flow-line flow-1" d="M 150,200 Q 200,220 250,200" stroke="#00f5ff" stroke-width="2" fill="none" opacity="0.6"/>
+                                <path class="flow-line flow-2" d="M 250,200 Q 300,220 350,200" stroke="#00f5ff" stroke-width="2" fill="none" opacity="0.6"/>
+                                <circle class="flow-particle" r="3" fill="#00f5ff">
+                                    <animateMotion dur="3s" repeatCount="indefinite">
+                                        <mpath href="#flow-path-1"/>
+                                    </animateMotion>
+                                </circle>
+                            </g>
+                            
+                            <!-- Gradients -->
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.3" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.3" />
+                                </linearGradient>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.2" />
+                                    <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.5" />
+                                </linearGradient>
+                                <linearGradient id="grad3" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#764ba2;stop-opacity:0.4" />
+                                    <stop offset="100%" style="stop-color:#667eea;stop-opacity:0.2" />
+                                </linearGradient>
+                                <path id="flow-path-1" d="M 150,200 Q 200,220 250,200 Q 300,220 350,200"/>
+                            </defs>
+                        </svg>
+                        
+                        <!-- Floating info cards with witty text -->
+                        <div class="floating-card card-1" data-float="1.5">
+                            <div class="card-icon">🧠</div>
+                            <div class="card-text">GPU RAM Wrangler</div>
+                        </div>
+                        <div class="floating-card card-2" data-float="2">
+                            <div class="card-icon">⚡</div>
+                            <div class="card-text">Speed Demon</div>
+                        </div>
+                        <div class="floating-card card-3" data-float="1.8">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-text">Bug Assassin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll for the good stuff</span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section with Isometric Skills -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="section-header" data-scroll>
+                <span class="section-label">The plot thickens</span>
+                <h2 class="section-title">What I Actually Do</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text" data-scroll>
+                    <p class="lead-text">
+                        I'm on a mission to make LLMs less of memory hogs. Currently pursuing my MSc at Edinburgh, 
+                        where I'm convincing GPUs to share their memory like civilized adults. Dr. Yuvraj Patel is 
+                        supervising this chaos.
+                    </p>
+                    <p>
+                        Before academia called, I was a Technical Lead at Kroger's digital empire, where I performed 
+                        the dark arts of platform optimization. Turns out, when you ask nicely (and architect correctly), 
+                        distributed systems can cost 40% less. Who knew?
+                    </p>
+                    <p>
+                        When I'm not teaching machines to play nice, I'm probably composing music with algorithms 
+                        (because normal music is too mainstream) or writing docs that people might actually read 
+                        (the real unicorn).
+                    </p>
+                </div>
+                <div class="skills-isometric" data-scroll>
+                    <div class="skills-container">
+                        <div class="skill-cube" style="--delay: 0.1s">
+                            <div class="cube-face front">
+                                <span class="skill-icon">🔧</span>
+                                <span class="skill-name">Systems Sorcery</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span>C/C++</span>
+                                <span>Go</span>
+                                <span>Rust</span>
+                                <span>CUDA</span>
+                            </div>
+                        </div>
+                        <div class="skill-cube" style="--delay: 0.2s">
+                            <div class="cube-face front">
+                                <span class="skill-icon">🌐</span>
+                                <span class="skill-name">Distributed Wizardry</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span>Paxos</span>
+                                <span>Raft</span>
+                                <span>Blockchain</span>
+                                <span>Consensus</span>
+                            </div>
+                        </div>
+                        <div class="skill-cube" style="--delay: 0.3s">
+                            <div class="cube-face front">
+                                <span class="skill-icon">🤖</span>
+                                <span class="skill-name">ML Alchemy</span>
+                            </div>
+                            <div class="skill-tags">
+                                <span>PyTorch</span>
+                                <span>TensorFlow</span>
+                                <span>Optimization</span>
+                                <span>PCA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline with 3D Cards -->
+    <section id="experience" class="experience-section section-padding">
+        <div class="container">
+            <div class="section-header" data-scroll>
+                <span class="section-label">The origin story</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline-3d">
+                <div class="timeline-item" data-scroll>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-perspective">
+                            <div class="card-3d">
+                                <div class="card-front">
+                                    <div class="timeline-date">2024 - Present</div>
+                                    <h3 class="timeline-title">MSc Student & Memory Whisperer</h3>
+                                    <div class="timeline-company">@ University of Edinburgh</div>
+                                    <p class="timeline-excerpt">
+                                        Researching how to make multiple LLMs share a GPU without throwing tantrums. 
+                                        Turns out virtual memory isn't just for CPUs anymore. Working with Dr. Yuvraj Patel 
+                                        to bring peace to the GPU memory wars.
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>CUDA Kung Fu</span>
+                                        <span>GPU Memory Jedi</span>
+                                        <span>LLM Herding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-scroll>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="card-perspective">
+                            <div class="card-3d">
+                                <div class="card-front">
+                                    <div class="timeline-date">2021 - 2024</div>
+                                    <h3 class="timeline-title">Technical Lead & Cost Slayer</h3>
+                                    <div class="timeline-company">@ Kroger Technology & Digital</div>
+                                    <p class="timeline-excerpt">
+                                        Led the charge against bloated infrastructure costs. Turns out platforms really don't like 
+                                        being optimized, but after some persuasion (and systematic analysis), achieved a humble 
+                                        40% cost reduction. The servers are still processing the betrayal.
+                                    </p>
+                                    <div class="timeline-highlights">
+                                        <div class="highlight-item">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                            <span>Made clouds cry with 40% cost cuts</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                            <span>Convinced distributed systems to behave</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                            <span>Mentored humans (harder than computers)</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-tags">
+                                        <span>Platform Whisperer</span>
+                                        <span>Infrastructure Tamer</span>
+                                        <span>Team Herder</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section section-padding">
+        <div class="container">
+            <div class="section-header" data-scroll>
+                <span class="section-label">The nerdy stuff</span>
+                <h2 class="section-title">Research</h2>
+            </div>
+            <div class="research-grid">
+                <div class="research-featured" data-scroll>
+                    <div class="research-visual">
+                        <svg viewBox="0 0 400 300" class="research-diagram">
+                            <g class="gpu-layer">
+                                <rect x="50" y="50" width="300" height="200" rx="10" fill="url(#gpuGrad)" stroke="#667eea" stroke-width="2"/>
+                                <text x="200" y="80" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">GPU Virtual Memory Magic</text>
+                                
+                                <g class="memory-viz">
+                                    <rect class="mem-block" x="70" y="100" width="80" height="40" rx="4" fill="#764ba2" opacity="0.8"/>
+                                    <rect class="mem-block" x="160" y="100" width="80" height="40" rx="4" fill="#667eea" opacity="0.8"/>
+                                    <rect class="mem-block" x="250" y="100" width="80" height="40" rx="4" fill="#f093fb" opacity="0.8"/>
+                                    
+                                    <rect class="mem-block" x="70" y="150" width="80" height="40" rx="4" fill="#667eea" opacity="0.6"/>
+                                    <rect class="mem-block" x="160" y="150" width="80" height="40" rx="4" fill="#764ba2" opacity="0.6"/>
+                                    <rect class="mem-block" x="250" y="150" width="80" height="40" rx="4" fill="#667eea" opacity="0.6"/>
+                                </g>
+                                
+                                <g class="data-arrows">
+                                    <path d="M 110,95 L 110,90" stroke="#00f5ff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.8"/>
+                                    <path d="M 200,95 L 200,90" stroke="#00f5ff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.8"/>
+                                    <path d="M 290,95 L 290,90" stroke="#00f5ff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.8"/>
+                                </g>
+                            </g>
+                            
+                            <defs>
+                                <linearGradient id="gpuGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:0.9" />
+                                    <stop offset="100%" style="stop-color:#16213e;stop-opacity:0.9" />
+                                </linearGradient>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#00f5ff" />
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="research-content">
+                        <div class="research-status">
+                            <span class="status-badge">Currently Breaking Things</span>
+                            <span class="research-year">2024</span>
+                        </div>
+                        <h3 class="research-title">Teaching GPUs to Share: A Love Story</h3>
+                        <p class="research-description">
+                            Investigating how to make multiple LLMs coexist on the same GPU without starting World War III. 
+                            Exploring virtual memory abstractions (yes, like the 90s but cooler), memory disaggregation 
+                            (fancy word for "let's split things up"), and CUDA-level black magic to improve resource 
+                            utilization. The goal? Make LLM serving cheaper so everyone can have AI, not just tech giants.
+                        </p>
+                        <div class="research-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                                <span>Supervised by: Dr. Yuvraj Patel (brave soul)</span>
+                            </div>
+                        </div>
+                        <div class="research-keywords">
+                            <span>GPU Therapy</span>
+                            <span>CUDA Witchcraft</span>
+                            <span>LLM Babysitting</span>
+                            <span>Virtual Memory 2.0</span>
+                            <span>Memory Sharing 101</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="research-cards">
+                    <div class="research-card" data-scroll>
+                        <div class="card-icon-large">🔗</div>
+                        <h4>Distributed Systems & The Art of Agreement</h4>
+                        <p>Deep dive into Paxos, Raft, and other consensus algorithms. AKA: How to make servers agree on things when they can't even agree on what time it is.</p>
+                        <div class="card-keywords">
+                            <span>Paxos Meditation</span>
+                            <span>Raft Adventures</span>
+                            <span>Blockchain Basics</span>
+                        </div>
+                    </div>
+                    <div class="research-card" data-scroll>
+                        <div class="card-icon-large">📊</div>
+                        <h4>ML Optimization: Make It Faster!</h4>
+                        <p>Studying how to make machine learning models train faster, converge better, and generally behave themselves. Spoiler: Math helps.</p>
+                        <div class="card-keywords">
+                            <span>Gradient Descent Yoga</span>
+                            <span>PCA Wizardry</span>
+                            <span>Cluster Wrangling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+        <div class="container">
+            <div class="section-header" data-scroll>
+                <span class="section-label">Side quests</span>
+                <h2 class="section-title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card-3d" data-scroll>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Samantha OS Assistant</h3>
+                        <p class="project-description">
+                            An OS assistant that's smarter than Clippy (low bar, I know). Combines Go and Python 
+                            because why use one language when you can use two? Automates tasks and probably judges 
+                            your file organization.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>Go</span>
+                            <span>Python</span>
+                            <span>Terminal Magic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-3d" data-scroll>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 18V5l12-2v13"/>
+                                    <circle cx="6" cy="18" r="3"/>
+                                    <circle cx="18" cy="16" r="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Algorithmic Music Composition</h3>
+                        <p class="project-description">
+                            Making music with code because guitars are too mainstream. Exploring Strudel to create 
+                            beats that only a programmer could love. Results may vary from "interesting" to "what 
+                            was I thinking?"
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>Strudel</span>
+                            <span>JavaScript</span>
+                            <span>Questionable Taste</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-3d" data-scroll>
+                    <div class="project-card-inner">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Spotify Desktop Redesign</h3>
+                        <p class="project-description">
+                            Told Spotify how to better organize their UI. They haven't responded yet (rude). 
+                            HCI coursework involving heuristic evaluation and pretending I know better than their 
+                            designers (I probably don't).
+                        </p>
+                        <div class="project-tech-stack">
+                            <span>HCI</span>
+                            <span>UX</span>
+                            <span>Unsolicited Advice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-content" data-scroll>
+                <div class="section-header centered">
+                    <span class="section-label">Let's build something cool</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                </div>
+                <p class="contact-text">
+                    Open to: Backend/systems roles, research collabs, and spirited debates about whether Paxos or Raft is superior 
+                    (spoiler: they both have their moments). If you're working on distributed systems, GPU optimization, or just want 
+                    to chat about why memory management is actually fascinating, hit me up!
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:your.email@ed.ac.uk" class="contact-method">
+                        <div class="method-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <span class="method-label">Email</span>
+                    </a>
+                    <a href="https://github.com/rtsh" class="contact-method" target="_blank">
+                        <div class="method-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                        </div>
+                        <span class="method-label">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rtsh13/" class="contact-method" target="_blank">
+                        <div class="method-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </div>
+                        <span class="method-label">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>Handcrafted with code, coffee, and questionable life choices</p>
+                    <p class="footer-small">© 2024 Ruchit Singh. May your builds always pass.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/rtsh13/portfolio" class="footer-link">
+                        [view_source]
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
